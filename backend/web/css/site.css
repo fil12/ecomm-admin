@@ -1,0 +1,265 @@
+html,
+body {
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view td {
+    white-space: nowrap;
+}
+
+.grid-view .filters input,
+.grid-view .filters select {
+    min-width: 50px;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding: 15px;
+    border: none;
+}
+
+@media(max-width:767px) {
+    .nav li > form > button.logout {
+        display:block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #11d0a0;
+}
+
+.table-bordered > thead > tr > th, .table-bordered > thead > tr > td {
+     border-bottom-width: 0px;
+}
+
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td {
+    border: 1px solid #ddd;
+    border-right: 0px;
+    border-left: 0px;
+}
+
+
+.security.login .btn.btn-green{
+    background-image: linear-gradient(to left,#0af0b6 0,#11d0a0 100%);
+    color: #d8d8d8;
+}
+
+.security1.login .panel-default{
+    margin: 0px 20px;
+}
+
+.navbar-inverse {
+    background-color: #d8d8d8;
+    border-color: #080808;
+
+}
+.navbar-inverse .navbar-nav > li > a{
+    color: #060606 !important;
+}
+
+.logo{
+    height: 50px;
+}
+
+.navbar-brand{
+    padding: 5px;
+}
+
+.ticket-panel{
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+
+.btn-create-left{
+    float: left;
+    margin-left: 30px;
+    margin-top: 25px;
+}
+
+.ticket.print .ticket-panel {
+    width: 600px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+
+.ticket-panel .info{
+}
+
+.ticket-panel .qr{
+    text-align: center;
+    padding: 0px 0px 0px 50px;
+
+}
+
+.ticket-logo{
+    margin-right: 20px;
+}
+
+.ticket-label{
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.ticket-panel .logo-line{
+    margin-bottom: 20px;
+}
+
+.ticket-panel .event-line{
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.ticket-panel .info-date{
+    margin-top: 15px;
+}
+
+.ticket-panel .info-line{
+    margin-bottom: 10px;
+}
+
+.ticket-item{
+    border: 1px solid #ddd;
+    padding: 10px 10px 6px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: block;
+    color: #000;
+}
+
+.ticket-item:hover, .ticket-item:active, .ticket-item:focus{
+    text-decoration: none;
+}
+
+.ticket-item.deleted{
+    opacity: 0.3;
+}
+.ticket-item  button{
+    float: right;
+    background: none;
+    border: none;
+    padding: 0px;
+    margin-left: 20px;
+}
+
+.ticket-info .check-ico{
+    font-size: 40px;
+    color: #ccc;
+    border: 2px dashed #ccc;
+    border-radius: 4px;
+    padding: 4px 6px 0px 4px;
+}
+
+.ticket-info span.check-ico{
+    color: #11d0a0;
+    border: 2px dashed #11d0a0;
+}
+
+.ticket-info .check-ico:hover{
+    color: #11d0a0;
+}
+
+.edit-container{
+    float: right;
+    margin-left: 10px;
+}
