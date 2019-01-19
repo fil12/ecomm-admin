@@ -5,13 +5,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\modules\Categories\models\Category */
+/* @var $model backend\modules\Orders\models\Orders */
 
-$this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Categories', 'url' => ['index']];
+$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Orders', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="category-view">
+<div class="orders-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,14 +30,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'parent_id',
-            'slug',
-            'title',
-            'description:ntext',
-            'image',
+            'customer.name',
+            'customer.phone',
+            'shipping_method',
+            'status',
+            'comment:ntext',
             'created_at',
             'updated_at',
-            'is_published',
         ],
     ]) ?>
 
@@ -51,12 +50,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
 //            'description',
 //            'image',
-//            'created_at',
+            'created_at',
             'price',
-            'updated_at',
-            'is_published',
+            'qty',
+//            'updated_at',
+//            'is_published',
 
-            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 </div>

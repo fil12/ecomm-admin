@@ -1,27 +1,27 @@
 <?php
 
-namespace app\modules\Categories\controllers;
+namespace app\modules\Orders\controllers;
 
-use app\modules\Categories\module;
-use backend\modules\Categories\Service\CategoryService;
+use app\modules\Orders\module;
+use app\modules\Orders\Service\OrdersService;
 use Yii;
-use backend\modules\Categories\models\Category;
-use backend\modules\Categories\models\search\CategorySearch;
+use backend\modules\Orders\models\Orders;
+use backend\modules\Orders\models\search\OrdersSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * DefaultController implements the CRUD actions for Category model.
+ * DefaultController implements the CRUD actions for Orders model.
  */
 class DefaultController extends Controller
 {
 
-    private $categoryService;
+    private $orderService;
 
-    public function __construct(string $id, module $module, CategoryService $categoryService,  array $config = [])
+    public function __construct(string $id, module $module, OrdersService $orderService, array $config = [])
     {
-        $this->categoryService = $categoryService;
+        $this->orderService = $orderService;
         parent::__construct($id, $module, $config);
     }
 
@@ -41,12 +41,12 @@ class DefaultController extends Controller
     }
 
     /**
-     * Lists all Category models.
+     * Lists all Orders models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CategorySearch();
+        $searchModel = new OrdersSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -56,7 +56,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * Displays a single Category model.
+     * Displays a single Orders model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -65,22 +65,23 @@ class DefaultController extends Controller
     {
         $model = $this->findModel($id);
 
-        $products = $this->categoryService->getProductByCategory($model);
+        $products = $this->orderService->getOrderProducts($model);
+
 
         return $this->render('view', [
-            'model' => $this->findModel($id),
-            'products' => $products
+            'model' => $model,
+            'products' =>$products
         ]);
     }
 
     /**
-     * Creates a new Category model.
+     * Creates a new Orders model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Category();
+        $model = new Orders();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -92,7 +93,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * Updates an existing Category model.
+     * Updates an existing Orders model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -112,7 +113,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * Deletes an existing Category model.
+     * Deletes an existing Orders model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -126,15 +127,15 @@ class DefaultController extends Controller
     }
 
     /**
-     * Finds the Category model based on its primary key value.
+     * Finds the Orders model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Category the loaded model
+     * @return Orders the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Category::findOne($id)) !== null) {
+        if (($model = Orders::findOne($id)) !== null) {
             return $model;
         }
 

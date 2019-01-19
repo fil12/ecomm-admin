@@ -29,7 +29,6 @@ AppAsset::register($this);
 
 
 <div class="wrap">
-
     <?php
     NavBar::begin([
         'brandLabel' => '<img src="/img/logo.png" class="pull-left logo"/>',
@@ -49,6 +48,10 @@ AppAsset::register($this);
             ];
             $menuItems[] = [
                 'label' => 'Products', 'url' => ['/products'],
+            ];
+
+            $menuItems[] = [
+                'label' => 'Orders', 'url' => ['/orders'],
             ];
 
             $menuItems[] = ['label' => 'Пользователи', 'url' => ['/user/admin/index']];

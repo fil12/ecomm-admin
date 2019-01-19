@@ -2,6 +2,9 @@
 
 namespace backend\modules\Products\models;
 
+use backend\modules\Categories\models\CategoriesProducts;
+use backend\modules\Categories\models\Category;
+use backend\modules\Orders\models\OrderProduct;
 use Yii;
 
 /**
@@ -22,9 +25,18 @@ use Yii;
  * @property OrderProduct[] $orderProducts
  * @property ProductImages[] $productImages
  * @property ProductParametersValue[] $productParametersValues
+ * @property int $qty
  */
 class Product extends \yii\db\ActiveRecord
 {
+
+    const NO_PRODUCTS = 'no products';
+
+    /**
+     * @var $qty - contains the 'qty' property
+     * of the related model OrderProducts
+     */
+    public $qty;
     /**
      * {@inheritdoc}
      */
@@ -48,6 +60,8 @@ class Product extends \yii\db\ActiveRecord
             [['sku'], 'string', 'max' => 25],
         ];
     }
+
+
 
     /**
      * {@inheritdoc}

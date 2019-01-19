@@ -31,6 +31,9 @@ return [
             'class'=>'dektrium\rbac\RbacWebModule',
             'admins' => ['admin'],
         ],
+        'orders' => [
+            'class' => 'app\modules\Orders\module',
+        ],
         'categories' => [
             'class' => 'app\modules\Categories\module',
         ],
@@ -38,7 +41,6 @@ return [
             'class' => 'app\modules\Products\module',
         ],
     ],
-
     'components' => [
         'urlManager' => [
             'enablePrettyUrl' => true,
